@@ -1,0 +1,94 @@
+/* Fondo pastel semitransparente */
+
+.musica-container {
+  background: linear-gradient(
+    135deg,
+    rgba(162, 210, 255, 0.4),
+    rgba(181, 234, 215, 0.4)
+  );
+  min-height: 100vh;
+  padding: 5rem 2rem 2rem 2rem;
+  color: #4a4a4a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Menú sticky en la parte superior */
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 241, 230, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Botón hamburguesa */
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: #4a4a4a;
+}
+
+/* Lista de enlaces del menú */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #a2d2ff;
+  color: #1b1b1b;
+}
+
+/* Responsive: menú hamburguesa en pantallas pequeñas */
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: rgba(181, 234, 215, 0.85);
+    flex-direction: column;
+    width: 200px;
+    height: calc(100% - 60px);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 2rem;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.15);
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    transform: trans
+  }
+}

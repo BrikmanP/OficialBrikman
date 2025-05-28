@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}header {
+  .main-nav {
+    position: relative;
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      padding-left: 0;
+
+      li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem;
+        transition: color 0.3s;
+
+        &.active,
+        &:hover {
+          color: #01e8b5;
+        }
+      }
+    }
+
+    // Responsive
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+      body {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      }
+
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+
+        li {
+          text-align: center;
+        }
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+    }
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

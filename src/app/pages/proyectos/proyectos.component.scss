@@ -1,0 +1,41 @@
+.proyectos-container {
+  background-color: rgba(1, 232, 181, 0.25); // pastel semitransparente #01e8b5
+  color: #000561;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.project-figure {
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 3rem;
+  border: 2px solid #000561;
+  border-radius: 1rem;
+  background-color: #e0f7f4; // un tono suave para el card
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  font-size: 2.5rem; // tamaño mediano para los íconos
+  color: white;
+
+  a {
+    color: white;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #000561;
+    }
+  }
+}

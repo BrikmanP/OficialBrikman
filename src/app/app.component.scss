@@ -1,0 +1,85 @@
+/* Estilos básicos del header */
+header {
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Menú principal */
+.main-nav {
+  position: relative;
+
+  /* Ocultar el checkbox real */
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  /* Icono hamburguesa */
+  .menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;  /* oculto en desktop */
+    user-select: none;
+  }
+
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &.active,
+        &:hover {
+          color: #A2D2FF; /* color pastel */
+        }
+      }
+    }
+  }
+}
+
+/* Responsive - móvil */
+@media (max-width: 768px) {
+  .main-nav {
+    .menu-icon {
+      display: block;
+    }
+
+    ul.nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(162, 210, 255, 0.95); /* pastel semitransparente */
+      height: 100vh;
+      width: 250px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 4rem 1.5rem;
+      gap: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+
+      li a {
+        color: #222;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+    }
+
+    /* Cuando checkbox está checked, mostrar menú */
+    input[type="checkbox"]:checked ~ ul.nav-links {
+      transform: translateX(0);
+    }
+  }
+}
